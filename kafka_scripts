@@ -1,0 +1,17 @@
+Start zookeeper server
+./bin/windows/zookeeper-server-start.bat config/zookeeper.properties
+
+Start kafka server
+./bin/windows/kafka-server-start.bat config/server.properties
+
+Creating topic
+.\bin\windows\kafka-topics.bat --create --topic events --bootstrap-server localhost:9092
+
+Describing topic
+ .\bin\windows\kafka-topics.bat --describe --topic events --bootstrap-server localhost:9092
+
+Write Command
+.\bin\windows\kafka-console-producer.bat --topic events --bootstrap-server localhost:9092
+
+Read Command
+./bin/windows/kafka-console-consumer.bat --topic events --from-beginning --bootstrap-server localhost:9092
